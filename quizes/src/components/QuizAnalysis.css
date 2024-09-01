@@ -1,0 +1,281 @@
+.quiz-analysis {
+  display: flex;
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  background-color: #ededed; /* Light grey background for the main section */
+  color: #333333; /* Dark text color for better contrast */
+}
+
+.sidebar {
+  width: 240px;
+  background-color: #ffffff; /* White background for the sidebar */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 70px;
+  font-family: Jomhuria, sans-serif; /* Custom font for the logo */
+  font-weight: 500px;
+  color: #333333;
+  margin-bottom: 40px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Add gap between the menu items */
+}
+
+nav ul li {
+  cursor: pointer;
+  color: #333333;
+  text-align: center; /* Center the menu items */
+  font-weight: bold; /* Make the options bold */
+}
+
+nav ul li.active {
+  background-color: #ffffff; /* Same as the sidebar background */
+  font-weight: bold;
+  color: #333333;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for the active link */
+}
+
+.logout {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333333;
+  position: relative;
+}
+
+.logout:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 2px;
+  background-color: #333333; /* Short line above the logout text */
+}
+
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #ededed; /* Match the light grey background */
+}
+
+.title {
+  color: #6d88ef; /* Blue title */
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center; /* Center the title */
+}
+
+/* Scrollable table container */
+.table-container {
+  max-height: 500px; /* Adjust the height based on your design needs */
+  overflow-y: auto;
+  background-color: #ffffff; /* White background for the table container */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow for the container */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #6d88ef; /* Blue header */
+  color: white;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid #dddddd; /* Light grey border for separation */
+}
+
+tbody tr {
+  transition: background-color 0.3s;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Light grey for odd rows */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #b3c4ff; /* Slightly darker light grey for even rows */
+}
+
+tbody tr:hover {
+  background-color: #dddddd; /* Highlight on hover */
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit,
+.delete,
+.share {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333333; /* Dark icons */
+}
+
+a {
+  text-decoration: none;
+  color: #6d88ef; /* Blue link */
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px; /* Increased padding for better spacing */
+  border-radius: 10px; /* Slightly more rounded corners */
+  text-align: center;
+  width: 400px; /* Fixed width for consistency */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 18px; /* Adjusted font size */
+  color: #333; /* Slightly darker color */
+}
+
+.confirm-btn,
+.cancel-btn {
+  margin: 15px; /* Increased margin for more space between buttons */
+  padding: 10px 25px; /* Adjusted padding for a larger click area */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; /* More rounded buttons */
+  font-weight: bold; /* Bold text */
+}
+
+.confirm-btn {
+  background-color: #f44336; /* Red background for confirm button */
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #e0e0e0; /* Light gray background for cancel button */
+  color: #333;
+  border: 1px solid #ccc; /* Light border */
+}
+
+/* Existing styles */
+
+.toaster {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2000; /* Ensure it's above other elements */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s; /* Fade in and fade out animations */
+  overflow: hidden; /* Ensure the progress bar stays within the toaster */
+}
+
+.toaster span {
+  margin-right: 10px;
+}
+
+.close-toaster {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 8px; /* Small cross sign */
+  cursor: pointer;
+  color: #999;
+}
+
+/* Progress bar styling */
+.toaster .progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: #4caf50; /* Green color */
+  width: 0;
+  animation: fillBar 4s linear forwards; /* Fills in 5 seconds */
+}
+
+/* Fade in and out animations */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Progress bar animation */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
